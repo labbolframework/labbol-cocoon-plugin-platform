@@ -26,6 +26,8 @@ import com.labbol.cocoon.plugin.platform.role.controller.BaseRoleController;
 import com.labbol.cocoon.plugin.platform.role.controller.BaseRoleDataRightController;
 import com.labbol.cocoon.plugin.platform.role.controller.DefaultRoleController;
 import com.labbol.cocoon.plugin.platform.role.controller.DefaultRoleDataRightController;
+import com.labbol.cocoon.plugin.platform.scip.controller.BaseSCIPController;
+import com.labbol.cocoon.plugin.platform.scip.controller.DefaultSCIPController;
 import com.labbol.cocoon.plugin.platform.security.controller.SecurityServiceController;
 import com.labbol.cocoon.plugin.platform.service.controller.BaseModuleServiceController;
 import com.labbol.cocoon.plugin.platform.service.controller.BaseModuleServiceInterfaceController;
@@ -147,6 +149,12 @@ public class CocoonPluginPlatformConfiguration {
 	@ConditionalOnMissingBean(BaseUserExtraOrgController.class)
 	public DefaultUserExtraOrgController defaultUserExtraOrgController() {
 		return new DefaultUserExtraOrgController();
+	}
+
+	@Bean
+	@ConditionalOnMissingBean(BaseSCIPController.class)
+	public DefaultSCIPController defaultSCIPController() {
+		return new DefaultSCIPController();
 	}
 
 }

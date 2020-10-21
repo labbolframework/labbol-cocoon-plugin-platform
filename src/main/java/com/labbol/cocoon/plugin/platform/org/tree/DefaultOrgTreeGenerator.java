@@ -44,6 +44,9 @@ public class DefaultOrgTreeGenerator implements OrgTreeGenerator {
 			} else {
 				treeStoreData.setChildren(childrens);
 			}
+			if (checkbox) {
+				treeStoreData.setChecked(false);
+			}
 			if (recursionParent) {
 				boolean rootOrg = false;// 是否是最根的那个节点（最根有且仅有一个）
 				String currentParentOrgNo = org.getParentOrgNo();
@@ -54,6 +57,9 @@ public class DefaultOrgTreeGenerator implements OrgTreeGenerator {
 						treeStoreData = parentTreeStoreData;
 						currentParentOrgNo = (String) parentTreeStoreData.getExtraParam2();// 父编号
 						parentTreeStoreData.setExtraParam2(null);
+						if (checkbox) {
+							treeStoreData.setChecked(false);
+						}
 					} else {
 						rootOrg = true;
 					}
