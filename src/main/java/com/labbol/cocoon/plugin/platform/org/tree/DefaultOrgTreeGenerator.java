@@ -87,9 +87,11 @@ public class DefaultOrgTreeGenerator implements OrgTreeGenerator {
 		}
 //		TreeStoreData<Org> treeStoreData = toTreeStoreData<Org>(parentOrg);
 		TreeStoreData<Org> treeStoreData = new TreeStoreData<Org>();
-		treeStoreData.setId("" + System.currentTimeMillis());
+//		treeStoreData.setId("" + System.currentTimeMillis());
+		treeStoreData.setId(parentOrg.getId());
 		treeStoreData.setText(parentOrg.getOrgName());
-		treeStoreData.setExtraParam1("" + System.currentTimeMillis());
+//		treeStoreData.setExtraParam1("" + System.currentTimeMillis());
+		treeStoreData.setExtraParam1(parentOrg.getId());
 		treeStoreData.setExtraParam2(parentOrg.getParentOrgNo());
 		if (checkbox) {
 			treeStoreData.setChecked(false);

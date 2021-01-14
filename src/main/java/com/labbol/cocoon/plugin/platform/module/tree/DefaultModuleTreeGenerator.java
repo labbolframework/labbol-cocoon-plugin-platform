@@ -127,6 +127,7 @@ public class DefaultModuleTreeGenerator implements ModuleTreeGenerator {
 		treeStoreData.setExtraParam3(module.getModuleNo());
 		treeStoreData.setExtraParam4(module.getModuleProperty());
 		treeStoreData.setChecked(showCheckbox ? false : null);
+		treeStoreData.addExtendAttribute("moduleOpenType", module.getModuleOpenType());
 		return treeStoreData;
 
 	}
